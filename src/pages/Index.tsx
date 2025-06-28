@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import AdditionalContent from "@/components/AdditionalContent";
+import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <Header />
       <Hero />
       <AdditionalContent />
+      <ContactForm />
       <Footer />
     </div>
   );
