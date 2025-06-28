@@ -6,7 +6,7 @@ import AdditionalContent from "@/components/AdditionalContent";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen" style={{ backgroundColor: '#1f00b6' }}>
       <Header />
       <Hero />
       <AdditionalContent />

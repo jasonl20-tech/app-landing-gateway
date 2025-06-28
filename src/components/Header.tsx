@@ -7,7 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(2, 0, 33, 0.95)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -45,7 +45,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-800/95 backdrop-blur-md rounded-lg mt-2 p-4 animate-fade-in">
+          <div className="md:hidden backdrop-blur-md rounded-lg mt-2 p-4 animate-fade-in" style={{ backgroundColor: 'rgba(2, 0, 33, 0.9)' }}>
             <nav className="flex flex-col space-y-4">
               <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
                 Features
