@@ -26,10 +26,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+            <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
               Features
             </a>
-            <a href="#download" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+            <a href="#download" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
               Download
             </a>
           </nav>
@@ -47,10 +47,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-gray-800/95 backdrop-blur-md rounded-lg mt-2 p-4 animate-fade-in">
             <nav className="flex flex-col space-y-4">
-              <a href="#features" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+              <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
                 Features
               </a>
-              <a href="#download" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+              <a href="#download" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
                 Download
               </a>
             </nav>
