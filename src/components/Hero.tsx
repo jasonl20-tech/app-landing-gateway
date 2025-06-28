@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Play, Globe, Sparkles, Users, Heart } from "lucide-react";
+import { Play, Globe } from "lucide-react";
 
 const Hero = () => {
   const handleWebVersion = () => {
@@ -13,94 +13,116 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
-
+    <section className="min-h-screen bg-gray-900 flex items-center justify-center pt-20 px-4 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+      
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center space-y-8 animate-fade-in">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-600/30 animate-scale-in">
-            <Sparkles className="h-4 w-4 text-indigo-400" />
-            <span className="text-sm text-slate-300">Neue Dating-App für echte Verbindungen</span>
-          </div>
-
-          {/* Main heading */}
-          <div className="space-y-6">
-            <h1 className="text-6xl lg:text-8xl font-bold text-white leading-tight animate-slide-in-right">
-              MostChats
-            </h1>
-            <p className="text-2xl lg:text-3xl text-slate-300 font-light max-w-4xl mx-auto">
-              Entdecke echte Verbindungen und authentische Gespräche
-            </p>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Die modernste Dating-App für Menschen, die mehr als nur oberflächliche Matches suchen. 
-              Bei uns stehen echte Gespräche und bedeutungsvolle Beziehungen im Mittelpunkt.
-            </p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
-            <Button
-              onClick={handlePlayStore}
-              size="lg"
-              className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-10 py-6 text-lg font-semibold rounded-full transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-emerald-500/25 min-w-[280px] group"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                  <Play className="h-5 w-5 fill-current" />
-                </div>
-                <div className="text-left">
-                  <div className="text-sm opacity-90">Jetzt kostenlos bei</div>
-                  <div className="font-bold text-xl">Google Play</div>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Text content */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Logo badge */}
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/267bf51e-9711-4333-aafd-bcd459c36595.png" 
+                  alt="MostChats Logo" 
+                  className="w-8 h-8 object-contain"
+                />
               </div>
-            </Button>
-
-            <Button
-              onClick={handleWebVersion}
-              variant="outline"
-              size="lg"
-              className="border-2 border-indigo-400 text-indigo-300 hover:bg-indigo-500/20 hover:border-indigo-300 px-10 py-6 text-lg font-semibold rounded-full transform hover:scale-105 transition-all duration-300 min-w-[280px] group"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-indigo-500/20 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                  <Globe className="h-5 w-5" />
-                </div>
-                <div className="text-left">
-                  <div className="text-sm opacity-90">Sofort starten mit</div>
-                  <div className="font-bold text-xl">Web Version</div>
-                </div>
-              </div>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
-            <div className="text-center space-y-2 transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center space-x-2">
-                <Users className="h-8 w-8 text-indigo-400" />
-                <div className="text-4xl font-bold text-indigo-400">15K+</div>
-              </div>
-              <div className="text-slate-400">Aktive Nutzer</div>
+              <span className="text-yellow-400 font-semibold text-lg">MostChats</span>
             </div>
-            <div className="text-center space-y-2 transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center space-x-2">
-                <Heart className="h-8 w-8 text-purple-400" />
-                <div className="text-4xl font-bold text-purple-400">100K+</div>
-              </div>
-              <div className="text-slate-400">Erfolgreiche Matches</div>
+
+            {/* Main heading */}
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                die app für echte
+                <br />
+                <span className="text-yellow-400">verbindungen</span>
+              </h1>
+              <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
+                Eine neue Art von Dating-App, die dir hilft, dein Leben zu organisieren, 
+                deine Ziele zu erreichen und echte Verbindungen zu knüpfen.
+              </p>
             </div>
-            <div className="text-center space-y-2 transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center space-x-2">
-                <Sparkles className="h-8 w-8 text-indigo-400" />
-                <div className="text-4xl font-bold text-indigo-400">98%</div>
+
+            {/* Download buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={handlePlayStore}
+                className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg font-semibold rounded-2xl flex items-center space-x-3 transition-all duration-300 shadow-lg"
+              >
+                <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center">
+                  <Play className="h-4 w-4 text-white fill-current" />
+                </div>
+                <span>App Store</span>
+              </Button>
+              
+              <Button
+                onClick={handleWebVersion}
+                variant="outline"
+                className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-yellow-400 px-8 py-6 text-lg font-semibold rounded-2xl flex items-center space-x-3 transition-all duration-300"
+              >
+                <Globe className="h-5 w-5" />
+                <span>XMQO</span>
+              </Button>
+            </div>
+          </div>
+
+          {/* Right side - Phone mockups */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative animate-fade-in animation-delay-500">
+              {/* Phone mockup 1 */}
+              <div className="relative z-20 w-64 h-[520px] bg-gray-800 rounded-[3rem] p-2 shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-500">
+                <div className="w-full h-full bg-yellow-400 rounded-[2.5rem] flex flex-col items-center justify-center p-6 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-8 bg-gray-900 rounded-t-[2.5rem] flex items-center justify-center">
+                    <div className="w-16 h-1 bg-gray-600 rounded-full"></div>
+                  </div>
+                  <div className="mt-12 text-center space-y-4">
+                    <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <img 
+                        src="/lovable-uploads/267bf51e-9711-4333-aafd-bcd459c36595.png" 
+                        alt="MostChats Logo" 
+                        className="w-10 h-10 object-contain"
+                      />
+                    </div>
+                    <h3 className="text-gray-900 font-bold text-xl">MostChats</h3>
+                    <p className="text-gray-700 text-sm px-4">
+                      Deine neue Dating-App für authentische Verbindungen
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-slate-400">Zufriedenheitsrate</div>
+
+              {/* Phone mockup 2 */}
+              <div className="absolute top-12 -left-20 z-10 w-64 h-[520px] bg-gray-800 rounded-[3rem] p-2 shadow-2xl transform -rotate-12 hover:-rotate-6 transition-transform duration-500">
+                <div className="w-full h-full bg-gray-900 rounded-[2.5rem] flex flex-col p-6 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-8 bg-gray-800 rounded-t-[2.5rem] flex items-center justify-center">
+                    <div className="w-16 h-1 bg-gray-600 rounded-full"></div>
+                  </div>
+                  <div className="mt-12 space-y-4">
+                    <div className="bg-gray-800 rounded-2xl p-4 space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-yellow-400 rounded-full"></div>
+                        <div className="text-white text-sm">Anna, 24</div>
+                      </div>
+                      <div className="text-gray-300 text-xs">
+                        Hey! Wie läuft dein Tag? 😊
+                      </div>
+                    </div>
+                    <div className="bg-gray-800 rounded-2xl p-4 space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-green-400 rounded-full"></div>
+                        <div className="text-white text-sm">Max, 26</div>
+                      </div>
+                      <div className="text-gray-300 text-xs">
+                        Lust auf einen Kaffee? ☕
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
