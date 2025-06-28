@@ -1,12 +1,16 @@
 
-import { Heart, Shield, Users, Star, MessageSquare, Zap } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Heart, MessageCircle, Users, Shield, Zap, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const AdditionalContent = () => {
+  const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,122 +20,142 @@ const AdditionalContent = () => {
       { threshold: 0.1 }
     );
 
-    const section = document.getElementById('features');
-    if (section) {
-      observer.observe(section);
-    }
+    const element = document.querySelector('#features');
+    if (element) observer.observe(element);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
-    <section id="features" className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative" style={{ backgroundColor: '#1f00b6' }}>
-      {/* Background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-64 h-64 lg:w-96 lg:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-0 w-64 h-64 lg:w-96 lg:h-96 bg-pink-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-purple-900/20 via-transparent to-purple-800/20"
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+        ></div>
+        <div 
+          className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ transform: `translateY(${scrollY * -0.05}px)` }}
+        ></div>
+        <div 
+          className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: '2s' }}
+        ></div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Stats Section */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Features Section */}
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm border border-purple-400/20 rounded-full px-4 py-2 mb-6">
+            <Sparkles className="h-5 w-5 text-purple-400" />
+            <span className="text-purple-300 font-medium">Features</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Warum <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">MostChats</span>?
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Entdecke die Features, die MostChats zur perfekten Dating-App für echte Verbindungen machen.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {[
-            { number: "50K+", label: "Aktive Nutzer", icon: Users },
-            { number: "98%", label: "Zufriedenheit", icon: Star },
-            { number: "1M+", label: "Matches", icon: Heart },
-            { number: "24/7", label: "Support", icon: MessageSquare }
-          ].map((stat, index) => (
-            <div 
-              key={index} 
-              className="bg-purple-500/10 backdrop-blur-md rounded-xl lg:rounded-2xl p-4 lg:p-6 border border-purple-400/20 text-center hover:bg-purple-500/20 hover:border-purple-400/40 hover:scale-105 transition-all duration-300 group"
-              style={{ 
-                animationDelay: `${index * 100}ms`,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                opacity: isVisible ? 1 : 0,
-                transition: `all 0.6s ease-out ${index * 100}ms`
-              }}
+            {
+              icon: Heart,
+              title: "Echte Verbindungen",
+              description: "Algorithmus fokussiert auf Persönlichkeit und gemeinsame Interessen",
+              delay: "0s"
+            },
+            {
+              icon: MessageCircle,
+              title: "Smart Matching",
+              description: "KI-basierte Vorschläge für perfekte Matches",
+              delay: "0.2s"
+            },
+            {
+              icon: Shield,
+              title: "100% Sicher",
+              description: "Verifizierte Profile und sichere Kommunikation",
+              delay: "0.4s"
+            },
+            {
+              icon: Users,
+              title: "Community",
+              description: "Aktive Community von authentischen Singles",
+              delay: "0.6s"
+            },
+            {
+              icon: Zap,
+              title: "Instant Connect",
+              description: "Sofortige Benachrichtigungen bei neuen Matches",
+              delay: "0.8s"
+            },
+            {
+              icon: Sparkles,
+              title: "Premium Features",
+              description: "Erweiterte Filter und exklusive Funktionen",
+              delay: "1s"
+            }
+          ].map((feature, index) => (
+            <div
+              key={index}
+              className={`group relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ animationDelay: feature.delay }}
             >
-              <div className="flex justify-center mb-2 lg:mb-3">
-                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-purple-500/20 rounded-lg lg:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="h-4 w-4 lg:h-6 lg:w-6 text-purple-400" />
+              <div className="relative bg-gradient-to-br from-purple-900/30 to-purple-800/20 backdrop-blur-md border border-purple-500/20 rounded-3xl p-8 hover:border-purple-400/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-purple-400/30">
+                    <feature.icon className="h-8 w-8 text-purple-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
-              <div className="text-xl lg:text-2xl font-bold text-white mb-1">{stat.number}</div>
-              <div className="text-xs lg:text-sm text-gray-400">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Feature Cards */}
-        <div className={`grid md:grid-cols-2 gap-6 lg:gap-8 mb-16 lg:mb-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <Card className="bg-purple-500/10 backdrop-blur-md border-purple-400/20 hover:border-purple-400/40 hover:scale-105 transition-all duration-300 group">
-            <CardContent className="p-6 lg:p-8">
-              <div className="flex items-center space-x-3 lg:space-x-4 mb-4 lg:mb-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-purple-500/20 rounded-xl lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="h-6 w-6 lg:h-8 lg:w-8 text-purple-400" />
-                </div>
-                <div>
-                  <h3 className="text-lg lg:text-xl font-bold text-white">100% Sicher</h3>
-                  <p className="text-sm lg:text-base text-gray-400">Deine Privatsphäre ist geschützt</p>
-                </div>
+        {/* CTA Section */}
+        <div className={`text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/30 backdrop-blur-md border border-purple-500/30 rounded-3xl p-12 max-w-4xl mx-auto">
+            <div className="space-y-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500/30 to-purple-600/30 rounded-3xl flex items-center justify-center mx-auto mb-8 border-2 border-purple-400/40 animate-pulse">
+                <Heart className="h-10 w-10 text-purple-400" />
               </div>
-              <p className="text-sm lg:text-base text-gray-300 leading-relaxed">
-                Modernste Verschlüsselung und Datenschutzmaßnahmen sorgen dafür, 
-                dass deine persönlichen Informationen immer sicher bleiben.
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Bereit für echte <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Verbindungen</span>?
+              </h3>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Starte noch heute deine Reise zu authentischen Beziehungen und finde Menschen, die wirklich zu dir passen.
               </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-pink-500/10 backdrop-blur-md border-pink-400/20 hover:border-pink-400/40 hover:scale-105 transition-all duration-300 group">
-            <CardContent className="p-6 lg:p-8">
-              <div className="flex items-center space-x-3 lg:space-x-4 mb-4 lg:mb-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-pink-500/20 rounded-xl lg:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="h-6 w-6 lg:h-8 lg:w-8 text-pink-400" />
-                </div>
-                <div>
-                  <h3 className="text-lg lg:text-xl font-bold text-white">Blitzschnell</h3>
-                  <p className="text-sm lg:text-base text-gray-400">Optimiert für beste Performance</p>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  onClick={() => window.open("https://play.google.com/store/apps", "_blank")}
+                >
+                  Jetzt kostenlos starten
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                  onClick={() => window.open("https://app.mostchats.com", "_blank")}
+                >
+                  Web Version testen
+                </Button>
               </div>
-              <p className="text-sm lg:text-base text-gray-300 leading-relaxed">
-                Unsere App läuft reibungslos auf allen Geräten und bietet dir 
-                ein schnelles, reaktionsfreudiges Dating-Erlebnis.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Call to Action */}
-        <div className={`bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md rounded-2xl lg:rounded-3xl p-6 lg:p-8 xl:p-12 border border-purple-400/30 text-center hover:border-purple-400/50 transition-all duration-500 hover:scale-105 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '600ms' }}>
-          <div className="flex justify-center mb-4 lg:mb-6">
-            <div className="w-16 h-16 lg:w-20 lg:h-20 bg-purple-500/30 rounded-2xl lg:rounded-3xl flex items-center justify-center border border-purple-400/40 hover:scale-110 transition-transform duration-300">
-              <img 
-                src="/lovable-uploads/267bf51e-9711-4333-aafd-bcd459c36595.png" 
-                alt="MostChats Logo" 
-                className="w-10 h-10 lg:w-12 lg:h-12 object-contain"
-              />
             </div>
-          </div>
-          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 lg:mb-4">
-            Bereit für echte Verbindungen?
-          </h3>
-          <p className="text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 max-w-2xl mx-auto">
-            Werde Teil unserer wachsenden Community und entdecke Menschen, 
-            die wirklich zu dir passen. Kostenlos und ohne Verpflichtungen.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 text-xs lg:text-sm text-gray-400">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-              Kostenlos registrieren
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              Keine versteckten Kosten
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              Jederzeit kündbar
-            </span>
           </div>
         </div>
       </div>
