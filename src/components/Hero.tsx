@@ -37,9 +37,9 @@ const Hero = () => {
       {/* LED Animation with Gradient Smoke Background */}
       <div className="absolute inset-0">
         {/* Gradient Smoke Layers */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-60">
           <div 
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/30 via-purple-600/20 to-transparent animate-pulse"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-900/40 via-purple-800/30 to-slate-900/40 animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * 0.1}px)`,
               filter: 'blur(100px)',
@@ -47,7 +47,7 @@ const Hero = () => {
             }}
           ></div>
           <div 
-            className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-l from-purple-500/40 via-purple-800/30 to-transparent rounded-full animate-pulse"
+            className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-l from-purple-600/50 via-indigo-700/40 to-transparent rounded-full animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * -0.15}px)`,
               filter: 'blur(80px)',
@@ -56,7 +56,7 @@ const Hero = () => {
             }}
           ></div>
           <div 
-            className="absolute bottom-0 left-1/3 w-80 h-80 bg-gradient-to-t from-purple-400/35 via-purple-700/25 to-transparent rounded-full animate-pulse"
+            className="absolute bottom-0 left-1/3 w-80 h-80 bg-gradient-to-t from-violet-500/45 via-purple-600/35 to-transparent rounded-full animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * 0.2}px)`,
               filter: 'blur(90px)',
@@ -69,10 +69,10 @@ const Hero = () => {
         {/* LED Light Effects */}
         <div className="absolute inset-0">
           <div 
-            className="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50 animate-pulse"
+            className="absolute top-1/4 left-1/4 w-4 h-4 bg-indigo-400 rounded-full shadow-lg shadow-indigo-400/50 animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * 0.3}px)`,
-              boxShadow: '0 0 20px #a855f7, 0 0 40px #a855f7, 0 0 60px #a855f7',
+              boxShadow: '0 0 20px #6366f1, 0 0 40px #6366f1, 0 0 60px #6366f1',
               animationDuration: '2s'
             }}
           ></div>
@@ -86,7 +86,7 @@ const Hero = () => {
             }}
           ></div>
           <div 
-            className="absolute bottom-1/4 left-1/2 w-5 h-5 bg-purple-500 rounded-full shadow-lg shadow-purple-500/50 animate-pulse"
+            className="absolute bottom-1/4 left-1/2 w-5 h-5 bg-violet-500 rounded-full shadow-lg shadow-violet-500/50 animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * 0.25}px)`,
               boxShadow: '0 0 25px #8b5cf6, 0 0 50px #8b5cf6, 0 0 75px #8b5cf6',
@@ -95,10 +95,10 @@ const Hero = () => {
             }}
           ></div>
           <div 
-            className="absolute top-2/3 left-1/6 w-2 h-2 bg-purple-200 rounded-full shadow-lg shadow-purple-200/50 animate-pulse"
+            className="absolute top-2/3 left-1/6 w-2 h-2 bg-indigo-200 rounded-full shadow-lg shadow-indigo-200/50 animate-pulse"
             style={{ 
               transform: `translateY(${scrollY * -0.1}px)`,
-              boxShadow: '0 0 10px #e9d5ff, 0 0 20px #e9d5ff, 0 0 30px #e9d5ff',
+              boxShadow: '0 0 10px #c7d2fe, 0 0 20px #c7d2fe, 0 0 30px #c7d2fe',
               animationDelay: '2.5s',
               animationDuration: '3.5s'
             }}
@@ -119,13 +119,13 @@ const Hero = () => {
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-purple-300 rounded-full animate-pulse"
+              className="absolute w-1 h-1 bg-indigo-300 rounded-full animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 4}s`,
                 animationDuration: `${3 + Math.random() * 2}s`,
-                boxShadow: '0 0 6px #d8b4fe'
+                boxShadow: '0 0 6px #a5b4fc'
               }}
             ></div>
           ))}
@@ -139,14 +139,14 @@ const Hero = () => {
           <div className={`space-y-6 lg:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Logo badge */}
             <div className="flex items-center space-x-3 mb-4 lg:mb-6">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-purple-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-purple-400/30 hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-indigo-500/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-indigo-400/30 hover:scale-110 transition-transform duration-300">
                 <img 
                   src="/lovable-uploads/267bf51e-9711-4333-aafd-bcd459c36595.png" 
                   alt="MostChats Logo" 
                   className="w-6 h-6 lg:w-8 lg:h-8 object-contain"
                 />
               </div>
-              <span className="text-purple-400 font-semibold text-base lg:text-lg">MostChats</span>
+              <span className="text-indigo-400 font-semibold text-base lg:text-lg">MostChats</span>
             </div>
 
             {/* Main heading */}
@@ -154,9 +154,9 @@ const Hero = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 die app für echte
                 <br />
-                <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent inline-block hover:scale-105 transition-transform duration-300">verbindungen</span>
+                <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400 bg-clip-text text-transparent inline-block hover:scale-105 transition-transform duration-300">verbindungen</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-lg">
                 Eine neue Art von Dating-App, die dir hilft, dein Leben zu organisieren, 
                 deine Ziele zu erreichen und echte Verbindungen zu knüpfen.
               </p>
@@ -166,7 +166,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 onClick={handlePlayStore}
-                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-2xl flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 group"
+                className="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-2xl flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 hover:scale-105 group"
               >
                 <div className="w-6 h-6 lg:w-8 lg:h-8 bg-white/20 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                   <Play className="h-3 w-3 lg:h-4 lg:w-4 text-white fill-current" />
@@ -177,7 +177,7 @@ const Hero = () => {
               <Button
                 onClick={handleWebVersion}
                 variant="outline"
-                className="border-2 border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-2xl flex items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
+                className="border-2 border-indigo-500 text-indigo-300 hover:bg-indigo-500/10 hover:border-indigo-400 px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg font-semibold rounded-2xl flex items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
               >
                 <Globe className="h-4 w-4 lg:h-5 lg:w-5 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Web Version</span>
@@ -190,12 +190,12 @@ const Hero = () => {
             <div className={`relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {/* Phone mockup 1 */}
               <div 
-                className="relative z-20 w-48 h-96 sm:w-56 sm:h-[450px] lg:w-64 lg:h-[520px] bg-gray-800 rounded-[2.5rem] lg:rounded-[3rem] p-2 shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-500 hover:scale-105"
+                className="relative z-20 w-48 h-96 sm:w-56 sm:h-[450px] lg:w-64 lg:h-[520px] bg-slate-800 rounded-[2.5rem] lg:rounded-[3rem] p-2 shadow-2xl transform rotate-12 hover:rotate-6 transition-transform duration-500 hover:scale-105"
                 style={{ transform: `rotate(12deg) translateY(${scrollY * 0.05}px)` }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-[2rem] lg:rounded-[2.5rem] flex flex-col items-center justify-center p-4 lg:p-6 relative overflow-hidden shadow-lg shadow-purple-500/30">
-                  <div className="absolute top-0 left-0 right-0 h-6 lg:h-8 bg-gray-900 rounded-t-[2rem] lg:rounded-t-[2.5rem] flex items-center justify-center">
-                    <div className="w-12 lg:w-16 h-0.5 lg:h-1 bg-gray-600 rounded-full"></div>
+                <div className="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[2rem] lg:rounded-[2.5rem] flex flex-col items-center justify-center p-4 lg:p-6 relative overflow-hidden shadow-lg shadow-indigo-500/30">
+                  <div className="absolute top-0 left-0 right-0 h-6 lg:h-8 bg-slate-900 rounded-t-[2rem] lg:rounded-t-[2.5rem] flex items-center justify-center">
+                    <div className="w-12 lg:w-16 h-0.5 lg:h-1 bg-slate-600 rounded-full"></div>
                   </div>
                   <div className="mt-8 lg:mt-12 text-center space-y-3 lg:space-y-4">
                     <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 backdrop-blur-sm rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-4 lg:mb-6 border border-white/30 hover:scale-110 transition-transform duration-300">
@@ -215,29 +215,29 @@ const Hero = () => {
 
               {/* Phone mockup 2 */}
               <div 
-                className="absolute top-8 lg:top-12 -left-16 lg:-left-20 z-10 w-48 h-96 sm:w-56 sm:h-[450px] lg:w-64 lg:h-[520px] bg-gray-800 rounded-[2.5rem] lg:rounded-[3rem] p-2 shadow-2xl transform -rotate-12 hover:-rotate-6 transition-transform duration-500 hover:scale-105"
+                className="absolute top-8 lg:top-12 -left-16 lg:-left-20 z-10 w-48 h-96 sm:w-56 sm:h-[450px] lg:w-64 lg:h-[520px] bg-slate-800 rounded-[2.5rem] lg:rounded-[3rem] p-2 shadow-2xl transform -rotate-12 hover:-rotate-6 transition-transform duration-500 hover:scale-105"
                 style={{ transform: `rotate(-12deg) translateY(${scrollY * -0.03}px)` }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 rounded-[2rem] lg:rounded-[2.5rem] flex flex-col p-4 lg:p-6 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-6 lg:h-8 bg-gray-800 rounded-t-[2rem] lg:rounded-t-[2.5rem] flex items-center justify-center">
-                    <div className="w-12 lg:w-16 h-0.5 lg:h-1 bg-gray-600 rounded-full"></div>
+                <div className="w-full h-full bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] lg:rounded-[2.5rem] flex flex-col p-4 lg:p-6 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-6 lg:h-8 bg-slate-800 rounded-t-[2rem] lg:rounded-t-[2.5rem] flex items-center justify-center">
+                    <div className="w-12 lg:w-16 h-0.5 lg:h-1 bg-slate-600 rounded-full"></div>
                   </div>
                   <div className="mt-8 lg:mt-12 space-y-3 lg:space-y-4">
-                    <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl lg:rounded-2xl p-3 lg:p-4 space-y-2 lg:space-y-3 border border-purple-500/30 hover:border-purple-400/50 transition-colors duration-300">
+                    <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl lg:rounded-2xl p-3 lg:p-4 space-y-2 lg:space-y-3 border border-indigo-500/30 hover:border-indigo-400/50 transition-colors duration-300">
                       <div className="flex items-center space-x-2 lg:space-x-3">
-                        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-purple-400 rounded-full animate-pulse"></div>
+                        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-indigo-400 rounded-full animate-pulse"></div>
                         <div className="text-white text-xs lg:text-sm">Anna, 24</div>
                       </div>
-                      <div className="text-gray-300 text-xs">
+                      <div className="text-slate-300 text-xs">
                         Hey! Wie läuft dein Tag? 😊
                       </div>
                     </div>
-                    <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl lg:rounded-2xl p-3 lg:p-4 space-y-2 lg:space-y-3 border border-purple-500/30 hover:border-purple-400/50 transition-colors duration-300">
+                    <div className="bg-slate-800/60 backdrop-blur-sm rounded-xl lg:rounded-2xl p-3 lg:p-4 space-y-2 lg:space-y-3 border border-purple-500/30 hover:border-purple-400/50 transition-colors duration-300">
                       <div className="flex items-center space-x-2 lg:space-x-3">
                         <div className="w-6 h-6 lg:w-8 lg:h-8 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                         <div className="text-white text-xs lg:text-sm">Max, 26</div>
                       </div>
-                      <div className="text-gray-300 text-xs">
+                      <div className="text-slate-300 text-xs">
                         Lust auf einen Kaffee? ☕
                       </div>
                     </div>

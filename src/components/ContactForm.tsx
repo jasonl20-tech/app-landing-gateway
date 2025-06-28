@@ -66,21 +66,21 @@ const ContactForm = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-purple-700/30"></div>
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-900/30 via-purple-800/20 to-slate-900/30"></div>
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl animate-smoke"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm border border-purple-400/20 rounded-full px-4 py-2 mb-6">
-            <Mail className="h-5 w-5 text-purple-400" />
-            <span className="text-purple-300 font-medium">Kontakt</span>
+          <div className="inline-flex items-center space-x-2 bg-indigo-500/10 backdrop-blur-sm border border-indigo-400/20 rounded-full px-4 py-2 mb-6">
+            <Mail className="h-5 w-5 text-indigo-400" />
+            <span className="text-indigo-300 font-medium">Kontakt</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Lass uns <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">sprechen</span>
+            Lass uns <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">sprechen</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Hast du Fragen zu MostChats oder möchtest du Feedback geben? Wir freuen uns auf deine Nachricht!
           </p>
         </div>
@@ -88,44 +88,44 @@ const ContactForm = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <div className="space-y-8">
-            <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/30 backdrop-blur-md border border-purple-500/30">
+            <Card className="bg-gradient-to-br from-slate-800/60 to-slate-700/40 backdrop-blur-md border border-indigo-500/30">
               <CardHeader>
                 <CardTitle className="text-white flex items-center space-x-2">
-                  <Mail className="h-6 w-6 text-purple-400" />
+                  <Mail className="h-6 w-6 text-indigo-400" />
                   <span>Kontaktinformationen</span>
                 </CardTitle>
-                <CardDescription className="text-gray-300">
+                <CardDescription className="text-slate-300">
                   Erreiche uns über verschiedene Kanäle
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center border border-purple-400/30">
-                    <Mail className="h-6 w-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                    <Mail className="h-6 w-6 text-indigo-400" />
                   </div>
                   <div>
                     <p className="text-white font-medium">E-Mail</p>
-                    <p className="text-gray-300">lohrejason5@gmail.com</p>
+                    <p className="text-slate-300">lohrejason5@gmail.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center border border-purple-400/30">
-                    <Phone className="h-6 w-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                    <Phone className="h-6 w-6 text-indigo-400" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Support</p>
-                    <p className="text-gray-300">24/7 verfügbar</p>
+                    <p className="text-slate-300">24/7 verfügbar</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center border border-purple-400/30">
-                    <MapPin className="h-6 w-6 text-purple-400" />
+                  <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-400/30">
+                    <MapPin className="h-6 w-6 text-indigo-400" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Antwortzeit</p>
-                    <p className="text-gray-300">Innerhalb von 24 Stunden</p>
+                    <p className="text-slate-300">Innerhalb von 24 Stunden</p>
                   </div>
                 </div>
               </CardContent>
@@ -133,10 +133,10 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/30 backdrop-blur-md border border-purple-500/30">
+          <Card className="bg-gradient-to-br from-slate-800/60 to-slate-700/40 backdrop-blur-md border border-indigo-500/30">
             <CardHeader>
               <CardTitle className="text-white">Schreib uns eine Nachricht</CardTitle>
-              <CardDescription className="text-gray-300">
+              <CardDescription className="text-slate-300">
                 Fülle das Formular aus und wir melden uns bei dir
               </CardDescription>
             </CardHeader>
@@ -151,7 +151,7 @@ const ContactForm = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-purple-900/20 border-purple-500/30 text-white placeholder:text-gray-400 focus:border-purple-400"
+                      className="bg-slate-800/40 border-indigo-500/30 text-white placeholder:text-slate-400 focus:border-indigo-400"
                       placeholder="Dein Name"
                     />
                   </div>
@@ -164,7 +164,7 @@ const ContactForm = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-purple-900/20 border-purple-500/30 text-white placeholder:text-gray-400 focus:border-purple-400"
+                      className="bg-slate-800/40 border-indigo-500/30 text-white placeholder:text-slate-400 focus:border-indigo-400"
                       placeholder="deine@email.com"
                     />
                   </div>
@@ -178,7 +178,7 @@ const ContactForm = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="bg-purple-900/20 border-purple-500/30 text-white placeholder:text-gray-400 focus:border-purple-400"
+                    className="bg-slate-800/40 border-indigo-500/30 text-white placeholder:text-slate-400 focus:border-indigo-400"
                     placeholder="Worum geht es?"
                   />
                 </div>
@@ -192,7 +192,7 @@ const ContactForm = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="bg-purple-900/20 border-purple-500/30 text-white placeholder:text-gray-400 focus:border-purple-400 resize-none"
+                    className="bg-slate-800/40 border-indigo-500/30 text-white placeholder:text-slate-400 focus:border-indigo-400 resize-none"
                     placeholder="Erzähl uns, wie wir dir helfen können..."
                   />
                 </div>
@@ -200,7 +200,7 @@ const ContactForm = () => {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-indigo-500/25"
                 >
                   {isLoading ? (
                     <div className="flex items-center space-x-2">
